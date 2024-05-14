@@ -30,6 +30,11 @@
             
     };
 
+    soft_off_wakers {
+        compatible = "zmk,soft-off-wakeup-sources";
+        wakeup-sources = <&default_kscan>;
+    };
+
     default_transform: matrix_transform {
         compatible = "zmk,matrix-transform";
         columns = <5>;
