@@ -5,8 +5,9 @@
  */
 
 #include <behaviors.dtsi>
-#include "keymap_eurkey_swiss_de.h"
+#include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/outputs.h>
 
 #define Default_layer   0
 #define Layer_1         1
@@ -16,10 +17,6 @@
 #define layer_5         5
 #define layer_6         6
 #define layer_7         7
-
-&soft_off {
-    hold-time-ms = <2000>;   //Only turn off it the key is held for 2 seconds or longer.
-};
 
 / {
     behaviors {
@@ -331,10 +328,10 @@
 
         Default_layer {
             bindings = <
-                &kp Q    &kp W      &kp F    &kp P                      &kp G                   &kp J           &kp L     &kp U                 &kp Y                  &kp BACKSPACE
+                &kp Q    &kp W      &kp F    &kp P                      &kp G                   &kp J           &kp L     &kp U                 &kp Y                  &kp SEMI
                 &kp A    &kp R      &kp S    &kp T                      &kp D                   &kp H           &kp N     &kp E                 &kp I                  &kp O
                 &kp Z    &kp X      &kp C    &kp V                      &hm LEFT_SHIFT B        &kp K           &kp M     &hm LEFT_GUI COMMA    &hm RIGHT_CONTROL DOT  &hm RIGHT_SHIFT SLASH
-                                             &qt LEFT_CONTROL ESCAPE    &qtl 1 SPACE            &qtl 2 ENTER    &qt RIGHT_ALT SEMI
+                                             &qt LEFT_CONTROL ESCAPE    &qtl 1 SPACE            &qtl 2 ENTER    &qt RIGHT_ALT BACKSPACE
             >;
         };
 
@@ -358,10 +355,10 @@
 
         layer_3 {
             bindings = <
-                &bt BT_SEL 0 &bt BT_SEL 1  &bt BT_SEL 2  &none  &bt BT_CLR  	    &bt BT_CLR_ALL  &none  &none  &none  &soft_off
-                &none        &none         &none         &none  &none       	    &none           &none  &none  &none  &none
-                &kp C_MUTE   &kp C_VOL_DN  &kp C_VOL_UP  &none  &bootloader       	&to 4           &to 6  &none  &none  &sys_reset
-                                                         &none  &none       	    &none           &none
+                &bt BT_SEL 0 &bt BT_SEL 1  &bt BT_SEL 2  &none  &bt BT_CLR  	&none  &none  &none  &none  &none
+                &none        &none         &none         &none  &none       	&none  &none  &none  &none  &none
+                &kp C_MUTE   &kp C_VOL_DN  &kp C_VOL_UP  &none  &bootloader     &to 4  &to 6  &none  &none  &sys_reset
+                                                         &none  &none       	&none  &none
             >;
         };
 
