@@ -18,11 +18,12 @@
 #define layer_6         6
 #define layer_7         7
 
-/ {
-    behaviors {
-        &soft_off {
+&soft_off {
             hold-time-ms = <3000>; // Only turn off it the key is held for 3 seconds or longer.
         };
+        
+/ {
+    behaviors {
 	    td0: tap_dance_0 {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_0";
