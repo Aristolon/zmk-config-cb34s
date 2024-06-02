@@ -20,6 +20,9 @@
 
 / {
     behaviors {
+        &soft_off {
+            hold-time-ms = <3000>; // Only turn off it the key is held for 3 seconds or longer.
+        };
 	    td0: tap_dance_0 {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_0";
@@ -321,10 +324,6 @@
             bindings = <&kp LA(F4)>;
             key-positions = <0 24>;
         };
-    };
-
-    &soft_off {
-        hold-time-ms = <3000>; // Only turn off it the key is held for 3 seconds or longer.
     };
 
     keymap {
