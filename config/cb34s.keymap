@@ -197,9 +197,10 @@
         
 	    tab 	= 0  | 1		
 	    alt+F4 	= 0  | 24		
-		?    	= 27 | 28		
-	    "    	= 12 | 13		
-	    '   	= 11 | 12		
+		!    	= 0  | 1  | 2
+        ?    	= 27 | 28 | 29		
+	    "    	= 11 | 13		
+	    '   	= 21 | 23		
 
         F1	    = 0  | 10
         F2	    = 1  | 11
@@ -226,23 +227,37 @@
             timeout-ms = <40>;
         };
 
+        cb_bootloarder {
+            bindings = <&bootloader>;
+            key-positions = <13 16>;
+            layers = <3>;
+            timeout-ms = <40>;
+        };
+
+        cb_exclamation {
+            bindings = <&kp EXCL>;
+            key-positions = <0 1 2>;
+            layers = <0>;
+            timeout-ms = <40>;
+        };
+            
         cb_question {
             bindings = <&kp QMARK>;
-            key-positions = <27 28>;
-            layers = <0 6>;
+            key-positions = <27 28 29>;
+            layers = <0>;
             timeout-ms = <40>;
         };
 
         cb_doublequotes {
             bindings = <&kp DQT>;
-            key-positions = <12 13>;
+            key-positions = <11 13>;
             layers = <0>;
             timeout-ms = <40>;
         };
 
         cb_singlequote {
             bindings = <&kp SQT>;
-            key-positions = <11 12>;
+            key-positions = <21 23>;
             layers = <0>;
             timeout-ms = <40>;
         };
@@ -250,7 +265,7 @@
         ctrl_plus_shift {
             bindings = <&kp LC(LS(LCTRL))>;
             key-positions = <10 20>;
-            layers = <0 4 6>;
+            layers = <0 4>;
             timeout-ms = <40>;
         };
 
@@ -281,7 +296,7 @@
         combo_f5 {
             bindings = <&kp F5>;
             key-positions = <4 14>;
-            layers = <0 4 6>;
+            layers = <0 4>;
         };
 
         combo_f8 {
@@ -334,8 +349,8 @@
             bindings = <
                 &kp Q    &kp W      &kp F    &kp P                      &kp G                   &kp J           &kp L     &kp U                 &kp Y                  &kp BACKSPACE
                 &kp A    &kp R      &kp S    &kp T                      &kp D                   &kp H           &kp N     &kp E                 &kp I                  &kp O
-                &kp Z    &kp X      &kp C    &kp V                      &hm LEFT_SHIFT B        &kp K           &kp M     &hm LEFT_GUI COMMA    &hm RIGHT_CONTROL DOT  &hm RIGHT_SHIFT SLASH
-                                             &qt LEFT_CONTROL ESCAPE    &qtl 1 SPACE            &qtl 2 ENTER    &qt RIGHT_ALT SEMI
+                &kp Z    &kp X      &kp C    &kp V                      &hm LEFT_SHIFT B        &kp K           &kp M     &hm RIGHT_ALT COMMA   &hm RIGHT_CONTROL DOT  &hm RIGHT_SHIFT SLASH
+                                             &qt LEFT_CONTROL ESCAPE    &qtl 1 SPACE            &qtl 2 ENTER    &qt LEFT_GUI SEMI
             >;
         };
 
@@ -361,17 +376,17 @@
             bindings = <
                 &bt BT_SEL 0 &bt BT_SEL 1  &bt BT_SEL 2  &none  &bt BT_CLR  	&none  &none  &none  &none  &soft_off
                 &none        &none         &none         &none  &none       	&none  &none  &none  &none  &none
-                &kp C_MUTE   &kp C_VOL_DN  &kp C_VOL_UP  &none  &bootloader     &to 4  &to 6  &none  &none  &sys_reset
+                &kp C_MUTE   &kp C_VOL_DN  &kp C_VOL_UP  &none  &none           &to 4  &to 6  &none  &none  &sys_reset
                                                          &none  &none       	&none  &none
             >;
         };
 
         layer_4 {
             bindings = <
-                &kp Q            &kp W  &td2   &kp P                 &td1             &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_MINUS   &kp KP_PLUS
-                &kp A            &kp R  &kp S  &kp T                 &td0             &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_SLASH   &kp KP_ASTERISK
-                &hm LEFT_SHIFT Z &kp X  &kp C  &kp V                 &td3      	      &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp BACKSPACE  &kp ENTER
-                                    &qt LEFT_CONTROL ESCAPE  &qtl 5 SPACE             &kp KP_NUMBER_0  &kp KP_DOT
+                &kp Q               &kp W   &td2    &kp P                    &td1             &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_MINUS   &kp KP_PLUS
+                &kp A               &kp R   &kp S   &kp T                    &td0             &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_SLASH   &kp KP_ASTERISK
+                &hm LEFT_SHIFT Z    &kp X   &kp C   &kp V                    &td3      	      &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp BACKSPACE  &kp ENTER
+                                                    &qt LEFT_CONTROL ESCAPE  &qtl 5 SPACE     &kp KP_NUMBER_0  &kp KP_DOT
             >;
         };
 
