@@ -197,8 +197,8 @@
         
 	    tab 	= 0  | 1		
 	    alt+F4 	= 0  | 24		
-		!    	= 0  | 1  | 2
-        ?    	= 27 | 28 | 29		
+		!    	= 1  | 2
+        ?    	= 27 | 28
 	    "    	= 11 | 13		
 	    '   	= 21 | 23		
 
@@ -236,14 +236,14 @@
 
         cb_exclamation {
             bindings = <&kp EXCL>;
-            key-positions = <0 1 2>;
+            key-positions = <1 2>;
             layers = <0>;
             timeout-ms = <40>;
         };
             
         cb_question {
             bindings = <&kp QMARK>;
-            key-positions = <27 28 29>;
+            key-positions = <27 28>;
             layers = <0>;
             timeout-ms = <40>;
         };
@@ -356,9 +356,9 @@
 
         Layer_1 {
             bindings = <
-                &kp LA(Q)     &kp LA(W)       &td4            &kp LA(F)        &kp F12          &kp KP_NUMBER_7       &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_MINUS  &kp KP_PLUS
-                &kp LA(A)     &kp LEFT_ARROW  &td5            &kp RIGHT_ARROW  &none            &kp KP_NUMBER_4       &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_SLASH  &kp KP_ASTERISK
-                &kp C_AL_CALC &none           &kp LC(LA(C))   &none            &none            &kp KP_NUMBER_1       &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp CARET     &kp BACKSPACE
+                &kp LA(Q)     &kp LA(W)       &td4            &kp LA(F)        &kp F12          &kp KP_NUMBER_7       &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_MINUS    &kp KP_PLUS
+                &kp LA(A)     &kp LEFT_ARROW  &td5            &kp RIGHT_ARROW  &none            &kp KP_NUMBER_4       &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_SLASH    &kp KP_ASTERISK
+                &kp C_AL_CALC &none           &kp LC(LA(C))   &none            &none            &kp KP_NUMBER_1       &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp BACKSPACE   &kp ENTER
                                                               &trans           &trans           &qtl 3 KP_NUMBER_0    &kp DOT
             >;
         };
@@ -394,7 +394,7 @@
             bindings = <
                 &tmn_riserpipe    &tmn_wsgen  &tmn_wdgen  &pu          &pl          &kp TILDE  &kp GRAVE    &kp BACKSLASH   &kp PIPE            &kp UNDER
                 &kp LA(A)         &trans      &tmn_s      &tmn_FHc     &di          &trans     &trans       &trans          &kp LS(NUMBER_2)    &kp Q
-                &kp C_AL_CALC     &xl         &tmn_valve  &tmn_sysgen  &tmn_FH      &to 0      &trans       &kp LESS_THAN   &kp GREATER_THAN    &trans
+                &kp C_AL_CALC     &xl         &tmn_valve  &tmn_sysgen  &tmn_FH      &to 0      &trans       &kp LESS_THAN   &kp GREATER_THAN    &kp DELETE
                                                           &trans       &trans       &trans     &trans
             >;
         };
